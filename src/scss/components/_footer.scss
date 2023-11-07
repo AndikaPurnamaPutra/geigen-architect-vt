@@ -1,0 +1,130 @@
+.footer {
+  overflow: hidden;
+  .container {
+    &-footer {
+      padding-top: 100px;
+      padding-bottom: 30px;
+      @include flex(column, flex-end, flex-end);
+      gap: 60px;
+      position: relative;
+      @include responsive(md) {
+        padding-top: 50px;
+        padding-bottom: 15px;
+      }
+      @include responsive(md) {
+        @include flex(column, flex-start, flex-start);
+        gap: 32px;
+      }
+      .content {
+        @include flex(row, flex-start, space-between);
+        @include responsive(md) {
+          width: 100%;
+          
+        }
+        @include responsive(sm) {
+          @include flex(column, flex-start, space-between);
+          gap: 32px;
+        }
+        &-text {
+          @include flex(column, flex-start, space-between);
+          gap: 30px;
+          @include responsive(md) {
+            gap: 16px;
+          }
+          @include responsive(sm) {
+            width: 100%;
+          }
+          &-subtitle {
+            color: $primary;
+            font-family: $font-display;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 110%; /* 22px */
+            letter-spacing: -0.2px;
+            @include responsive(xl) {
+              font-size: 18px;
+            }
+          }
+          &-desc {
+            color: $gray;
+            font-family: $font-display;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 180%; /* 32.4px */
+            @include responsive(xl) {
+              font-size: 16px;
+            }
+          }
+          .nav {
+            @include flex(column, flex-start, space-between);
+            gap: 16px;
+            &-link {
+              color: $primary;
+              font-family: $font-display;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 180%; /* 32.4px */
+              @include responsive(xl) {
+              font-size: 16px;
+            }
+              &:hover,
+              &:focus {
+                color: $secondary;
+              }
+            }
+          }
+          form {
+            @include flex(row, center, flex-start);
+            width: 100%;
+            input {
+              color: #d4d3d2;
+              font-family: $font-display;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 180%; /* 32.4px */
+              width: 100%;
+              padding: 11px 20px;
+              border: unset;
+              outline: unset;
+              @include responsive(xl) {
+              font-size: 16px;
+            }
+              &::placeholder {
+                @extend input;
+              }
+            }
+          }
+        }
+      }
+      .copyright {
+        &-label {
+          color: $gray;
+          font-family: $font-display;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 180%; /* 28.8px */
+          @include responsive(xl) {
+            font-size: 14px;
+          }
+        }
+      }
+      .img-decoration {
+        position: absolute;
+        bottom: -62px;
+        left: -58px;
+        max-width: 345px;
+        @include responsive(xl) {
+          max-width: 285px;
+        }
+        @include responsive(md) {
+          display: none;
+        }
+      }
+    }
+  }
+}

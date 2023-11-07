@@ -1,0 +1,141 @@
+.section-achievements {
+  background-color: $primary;
+  position: relative;
+  padding-block: 100px;
+  @include responsive(md) {
+    padding-block: 50px;
+  }
+  .wrapper-decoration {
+    z-index: 1;
+  }
+  .container {
+    &-achievements {
+      flex-direction: column;
+      gap: 100px;
+      @include responsive(md) {
+        gap: 32px;
+      }
+      .head-content {
+        z-index: 2;
+        .subtext {
+          @include flex(row, center, space-around);
+          @include responsive(md) {
+            @include flex(column, flex-start, space-around);
+            gap: 32px;
+          }
+          &-text {
+            @include responsive(md) {
+              width: 100%;
+            }
+            &-display {
+              color: $white;
+              font-family: $font-display;
+              font-size: 120px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 110%; /* 132px */
+              letter-spacing: -1.2px;
+              @include responsive(xl) {
+                font-size: 68px;
+              }
+              @include responsive(sm) {
+                font-size: 42px;
+              }
+            }
+            &-desc {
+              color: $light-white;
+              font-family: $font-display;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 180%; /* 32.4px */
+              @include responsive(xl) {
+                font-size: 16px;
+              }
+            }
+            .img-decoration-star {
+              max-width: 42px;
+              margin-bottom: 30px;
+              @include animation(rotate 2s linear infinite);
+              @include responsive(xl) {
+                max-width: 40px;
+              }
+              @include responsive(md) {
+                max-width: 32px;
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+      .body-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+        z-index: 2;
+        @include responsive(xl) {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        @include responsive(md) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @include responsive(sm) {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 24px;
+        }
+        .card {
+          padding: 40px 40px;
+          background-color: $brown;
+          @include flex(column, flex-start, flex-start);
+          gap: 50px;
+          &-icon {
+            max-width: 70px;
+          }
+          &-body {
+            .title {
+              color: $white;
+              font-family: $font-display;
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 110%; /* 22px */
+              letter-spacing: -0.2px;
+              width: 206px;
+              @include responsive(md) {
+                font-size: 18px;
+              }
+            }
+            .year {
+              color: $light-white;
+              font-family: $font-display;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 180%; /* 32.4px */
+              @include responsive(md) {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.cross {
+  background-image: url("../../../assets/image/cross-black.svg") !important;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  width: 24px;
+  height: 24px;
+}
+
+@include keyframes(rotate) {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

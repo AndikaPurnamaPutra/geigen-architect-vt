@@ -1,0 +1,215 @@
+.section-header {
+  .container {
+    &-header {
+      padding-block: 100px;
+      flex-direction: column;
+      position: relative;
+      padding-inline: 135px;
+      @include responsive(xl) {
+        padding-inline: 75px;
+      }
+      @include responsive(md) {
+        padding: 50px 20px;
+        gap: 32px;
+      }
+      .head-content {
+        width: 100%;
+        z-index: 1;
+        .subtext {
+          @include flex(row, center, space-between);
+          @include responsive(md) {
+            @include flex(column-reverse, center, space-between);
+            gap: 24px;
+          }
+          &-text {
+            @include flex(column, flex-start);
+            &-display {
+              color: $primary;
+              font-family: $font-display;
+              font-size: 130px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 110%; /* 143px */
+              letter-spacing: -1.3px;
+              max-width: 746px;
+              margin-bottom: 20px;
+              @include responsive(xl) {
+                font-size: 78px;
+              }
+              @include responsive(sm) {
+                font-size: 42px;
+              }
+            }
+            &-subtitle {
+              color: $primary;
+              font-family: $font-display;
+              font-size: 24px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: normal;
+              margin-bottom: 60px;
+              @include responsive(xl) {
+                font-size: 20px;
+              }
+              @include responsive(md) {
+                margin-bottom: 16px;
+              }
+              @include responsive(sm) {
+                font-size: 18px;
+              }
+            }
+          }
+          &-image {
+            @include flex(row, flex-end);
+            position: relative;
+            @include responsive(sm) {
+              display: none;
+            }
+            .img-header-lg {
+              max-width: 331px;
+            }
+            .img-header-sm {
+              max-width: 140px;
+              position: absolute;
+              bottom: -32px;
+              left: -32px;
+              
+            }
+          }
+        }
+      }
+      .body-content {
+        @include flex(row, flex-end, space-between);
+        @include responsive(md) {
+          @include flex(column, flex-start, space-between);
+          gap: 16px;
+        }
+        margin-top: -35px;
+        @include responsive(xl) {
+          margin-top: 0;
+        }
+        .subtext {
+          @include flex(row, flex-end, space-between);
+          @include responsive(md) {
+            width: 100%;
+          }
+          &-text {
+            @extend .subtext;
+            &.profile {
+              @include flex(column, flex-start);
+            }
+            .profile {
+              &-username {
+                color: $gray;
+                font-family: $font-display;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 110%; /* 22px */
+                letter-spacing: -0.2px;
+                @include responsive(xl) {
+                  font-size: 18px;
+                }
+              }
+              &-jobs {
+                color: $gray;
+                font-family: $font-display;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 180%; /* 32.4px */
+                @include responsive(xl) {
+                  font-size: 16px;
+                }
+              }
+            }
+            &-desc {
+              color: $gray;
+              font-family: $font-display;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 180%; /* 32.4px */
+              margin-right: 66px;
+              @include responsive(xl) {
+                margin-right: 24px;
+                font-size: 16px;
+              }
+            }
+            .img-decoration-star {
+              max-width: 51px;
+              @include animation(rotate 2s linear infinite);
+              @include responsive(xl) {
+                max-width: 40px;
+              }
+              @include responsive(md) {
+                max-width: 32px;
+              }
+            }
+          }
+          &-image {
+            display: inline-flex;
+            max-width: 269px;
+            margin-right: 40px;
+            margin-bottom: -30px;
+            @include responsive(xl) {
+              margin-bottom: -20px;
+            }
+            @include responsive(md) {
+              display: none;
+            }
+          }
+        }
+      }
+      .img-decoration-arrow {
+        position: absolute;
+        bottom: 168px;
+        left: 307px;
+        z-index: -1;
+        @include responsive(xl) {
+          max-width: 450px;
+          bottom: 186px;
+          left: 235px;
+        }
+        @include responsive(md) {
+          display: none;
+        }
+      }
+      .img-decoration-left {
+        max-width: 580px;
+        position: absolute;
+        top: 108px;
+        left: -122px;
+        z-index: -1;
+        @include responsive(xl) {
+          max-width: 500px;
+        }
+        @include responsive(sm) {
+          display: none;
+        }
+      }
+      .img-decoration-right {
+        max-width: 402.273px;
+        position: absolute;
+        top: 274px;
+        right: -158px;
+        z-index: -1;
+        @include responsive(xl) {
+          max-width: 324px;
+        }
+        @include responsive(sm) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@include keyframes(rotate) {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

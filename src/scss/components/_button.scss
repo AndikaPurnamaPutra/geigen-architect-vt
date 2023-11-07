@@ -1,0 +1,46 @@
+.btn {
+	border-color: transparent;
+	color: $white;
+	text-align: center;
+	font-family: $font-display;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	background-color: transparent;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 300ms ease;
+	&-primary {
+		padding: 18px 40px;
+		background-color: $secondary;
+		&:hover {
+			background-color: $primary;
+		}
+		@include responsive(md) {
+			padding: 12px 24px;
+		}
+	}
+	&-secondary {
+		background-color: $primary;
+		padding: 15px 40px;
+		&:hover {
+			background-color: $secondary;
+		}
+	}
+	&-submit {
+		background-color: $secondary;
+		padding: 11px 40px;
+		&:hover {
+			background-color: $primary;
+		}
+	}
+	&-arrow {
+		@include responsive(md) {
+			svg {
+				max-width: 32px;
+				max-height: 32px;
+			}
+		}
+	}
+}

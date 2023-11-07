@@ -1,0 +1,90 @@
+// loop grid
+@use "sass:math";
+
+$grid-columns: 12;
+
+@for $i from 1 through $grid-columns {
+  .grid-#{$i} {
+    width: calc(($i / $grid-columns) * 100%);
+  }
+}
+// example to html
+// .grid-6 for 50%
+// .grid-12 for 100%
+[class^="grid-"] {
+  @include responsive(md) {
+    width: 100% !important;
+  }
+}
+
+// layout for display
+section {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  padding-inline: 100px;
+  flex-direction: row;
+  @include responsive(xl) {
+    padding-inline: 50px;
+  }
+  @include responsive(md) {
+    flex-direction: column;
+    padding-inline: 20px;
+  }
+  &-fluid {
+    width: 100%;
+    padding-left: calc((100% - 1440px) / 2);
+    @include responsive(md) {
+      margin: auto;
+      padding-left: unset;
+    }
+  }
+}
+
+// flex
+@mixin flex($direction, $align: null, $justify: null) {
+  display: flex;
+  flex-direction: $direction;
+  @if $align {
+    align-items: $align;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+}
+
+.wrapper-decoration {
+  max-width: 1440px;
+  height: 100%;
+  width: 100%;
+  padding-inline: 100px;
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  @include flex(row, flex-start, space-between);
+  @include responsive(md) {
+    padding-inline: 20px;
+  }
+  .line-decoration {
+    height: 100%;
+    width: 1px;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.2) 45%,
+      rgba(255, 255, 255, 0) 10%
+    );
+    background-position: left;
+    background-size: 1px 15px;
+    background-repeat: repeat-y;
+  }
+}

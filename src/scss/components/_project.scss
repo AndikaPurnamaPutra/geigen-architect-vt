@@ -1,0 +1,186 @@
+.section-project {
+  position: relative;
+  padding-block: 100px;
+  @include responsive(md) {
+    padding-block: 50px;
+  }
+  .wrapper-decoration {
+    .line-decoration {
+      background-image: linear-gradient(
+        to bottom,
+        rgba(228, 228, 228, 1) 45%,
+        rgba(255, 255, 255, 0) 10%
+      );
+    }
+  }
+  .container {
+    &-porject {
+      .head-content {
+        @include flex(row, center, space-between);
+        width: 100%;
+        padding-inline: 34px;
+        margin-bottom: 60px;
+        @include responsive(xl) {
+          padding-inline: 16px;
+        }
+        @include responsive(md) {
+          padding-inline: unset;
+          @include flex(column, flex-start, space-between);
+          gap: 16px;
+          margin-bottom: 30px;
+        }
+        .content {
+          &-subtitle {
+            color: $primary;
+            font-family: $font-display;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            @include responsive(md) {
+              font-size: 18px;
+            }
+          }
+          &-arrow {
+            @include flex(row, center, space-between);
+            gap: 10px;
+            @include responsive(md) {
+              width: 100%;
+            }
+            .btn-arrow {
+              &:hover,
+              &:focus {
+                svg {
+                  path {
+                    stroke: $secondary;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .container-fluid {
+    &-project {
+      .body-content {
+        @include flex(row, flex-start, flex-start);
+        gap: 75px;
+        overflow: auto;
+        .slick-track {
+          @include responsive(md) {
+            @include flex(row, center);
+            gap: 75px;
+          }
+        }
+        .slick-slide {
+          padding-left: 100px;
+          @include responsive(xl) {
+            padding-left: 50px;
+          }
+          @include responsive(md) {
+            padding-left: unset;
+          }
+        }
+        .slick-active {
+          .img-decoration {
+            opacity: 0;
+          }
+        }
+        .card {
+          @include flex(column, flex-end, space-between);
+          max-width: 750px;
+          position: relative;
+          @include responsive(sm) {
+            max-width: 336px;
+          }
+          &-date {
+            color: $gray;
+            font-family: $font-display;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 180%; /* 25.2px */
+            margin-bottom: 20px;
+            @include responsive(sm) {
+              margin-bottom: 10px;
+            }
+          }
+          &-image {
+            display: inline-flex;
+          }
+          &-body {
+            padding: 20px 20px;
+            @include flex(row, flex-start, space-between);
+            width: 100%;
+            @include responsive(sm) {
+              padding: 10px 10px;
+            }
+            .subtext {
+              &-project {
+                color: $gray;
+                font-family: $font-display;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 110%; /* 22px */
+                letter-spacing: -0.2px;
+                @include responsive(md) {
+                  font-size: 18px;
+                }
+              }
+              &-name {
+                color: $gray;
+                font-family: $font-display;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 180%; /* 32.4px */
+                @include responsive(md) {
+                  font-size: 16px;
+                }
+              }
+              &-place {
+                color: $gray;
+                font-family: $font-display;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 180%; /* 32.4px */
+                @include responsive(md) {
+                  font-size: 16px;
+                }
+              }
+            }
+          }
+          .img-decoration {
+            position: absolute;
+            top: 125px;
+            left: -50px;
+            max-width: 106px;
+            transition: 800ms;
+            @include animation(rotate 4s linear infinite);
+            @include responsive(md) {
+              max-width: 86px;
+            }
+            @include responsive(sm) {
+              max-width: 42px;
+              top: 75px;
+              left: -20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include keyframes(rotate) {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
