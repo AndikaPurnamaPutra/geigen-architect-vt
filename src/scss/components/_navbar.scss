@@ -47,7 +47,7 @@
           }
           &-item {
             @include flex(row, center, space-between);
-            gap: 32px;
+            gap: 50px;
             @include responsive(md) {
               @include flex(column, flex-start, space-between);
               gap: 32px;
