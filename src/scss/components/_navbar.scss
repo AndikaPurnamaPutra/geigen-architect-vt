@@ -8,19 +8,19 @@
       padding-block: 24px;
       @include flex(row, center, space-between);
       position: relative;
-      @include responsive(md) {
+      @include responsive(lg) {
         padding-block: 14px;
       }
       .nav {
         &-logo {
           max-width: 152px;
           display: inline-flex;
-          @include responsive(md) {
+          @include responsive(lg) {
             max-width: 90px;
           }
         }
         &-menu {
-          @include responsive(md) {
+          @include responsive(lg) {
             position: absolute;
             top: 100%;
             left: 0;
@@ -48,7 +48,7 @@
           &-item {
             @include flex(row, center, space-between);
             gap: 50px;
-            @include responsive(md) {
+            @include responsive(lg) {
               @include flex(column, flex-start, space-between);
               gap: 32px;
               opacity: 0;
@@ -71,7 +71,7 @@
           }
           .btn-secondary-mobile {
             display: none;
-            @include responsive(md) {
+            @include responsive(lg) {
               display: inline-flex;
               width: 100%;
               opacity: 0;
@@ -81,7 +81,7 @@
         }
         &-btn-responsive {
           display: none;
-          @include responsive(md) {
+          @include responsive(lg) {
             display: block;
             background-image: url("../../../assets/image/menu-black.svg");
             background-repeat: no-repeat;
@@ -99,7 +99,7 @@
         }
       }
       .btn-secondary-desktop {
-        @include responsive(md) {
+        @include responsive(lg) {
           display: none;
         }
       }

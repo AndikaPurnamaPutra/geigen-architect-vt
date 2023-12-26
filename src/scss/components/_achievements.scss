@@ -2,7 +2,7 @@
   background-color: $primary;
   position: relative;
   padding-block: 100px;
-  @include responsive(md) {
+  @include responsive(lg) {
     padding-block: 50px;
   }
   .wrapper-decoration {
@@ -12,19 +12,19 @@
     &-achievements {
       flex-direction: column;
       gap: 100px;
-      @include responsive(md) {
+      @include responsive(lg) {
         gap: 32px;
       }
       .head-content {
         z-index: 2;
         .subtext {
           @include flex(row, center, space-around);
-          @include responsive(md) {
+          @include responsive(lg) {
             @include flex(column, flex-start, space-around);
             gap: 32px;
           }
           &-text {
-            @include responsive(md) {
+            @include responsive(lg) {
               width: 100%;
             }
             &-display {
@@ -60,7 +60,7 @@
               @include responsive(xl) {
                 max-width: 40px;
               }
-              @include responsive(md) {
+              @include responsive(lg) {
                 max-width: 32px;
                 margin-bottom: 0;
               }
@@ -76,7 +76,7 @@
         @include responsive(xl) {
           grid-template-columns: repeat(3, 1fr);
         }
-        @include responsive(md) {
+        @include responsive(lg) {
           grid-template-columns: repeat(2, 1fr);
         }
         @include responsive(sm) {
@@ -101,7 +101,7 @@
               line-height: 110%; /* 22px */
               letter-spacing: -0.2px;
               width: 206px;
-              @include responsive(md) {
+              @include responsive(lg) {
                 font-size: 18px;
               }
             }
@@ -112,7 +112,7 @@
               font-style: normal;
               font-weight: 500;
               line-height: 180%; /* 32.4px */
-              @include responsive(md) {
+              @include responsive(lg) {
                 font-size: 16px;
               }
             }

@@ -7,17 +7,15 @@
       @include flex(column, flex-end, flex-end);
       gap: 60px;
       position: relative;
-      @include responsive(md) {
+      @include responsive(lg) {
         padding-top: 50px;
         padding-bottom: 15px;
-      }
-      @include responsive(md) {
         @include flex(column, flex-start, flex-start);
         gap: 32px;
       }
       .content {
         @include flex(row, flex-start, space-between);
-        @include responsive(md) {
+        @include responsive(lg) {
           width: 100%;
           
         }
@@ -28,7 +26,7 @@
         &-text {
           @include flex(column, flex-start, space-between);
           gap: 30px;
-          @include responsive(md) {
+          @include responsive(lg) {
             gap: 16px;
           }
           @include responsive(sm) {
@@ -79,6 +77,10 @@
           form {
             @include flex(row, center, flex-start);
             width: 100%;
+
+            @include responsive(lg) {
+              flex-direction: column;
+            }
             input {
               color: #d4d3d2;
               font-family: $font-display;
@@ -121,7 +123,7 @@
         @include responsive(xl) {
           max-width: 285px;
         }
-        @include responsive(md) {
+        @include responsive(lg) {
           display: none;
         }
       }

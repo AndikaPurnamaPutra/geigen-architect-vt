@@ -34,14 +34,14 @@ section {
   @include responsive(xl) {
     padding-inline: 50px;
   }
-  @include responsive(md) {
+  @include responsive(lg) {
     flex-direction: column;
     padding-inline: 20px;
   }
   &-fluid {
     width: 100%;
     padding-left: calc((100% - 1440px) / 2);
-    @include responsive(md) {
+    @include responsive(lg) {
       margin: auto;
       padding-left: unset;
     }

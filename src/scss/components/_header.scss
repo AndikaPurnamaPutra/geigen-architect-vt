@@ -8,7 +8,7 @@
       @include responsive(xl) {
         padding-inline: 75px;
       }
-      @include responsive(md) {
+      @include responsive(lg) {
         padding: 50px 20px;
         gap: 32px;
       }
@@ -17,7 +17,7 @@
         z-index: 1;
         .subtext {
           @include flex(row, center, space-between);
-          @include responsive(md) {
+          @include responsive(lg) {
             @include flex(column-reverse, center, space-between);
             gap: 24px;
           }
@@ -51,7 +51,7 @@
               @include responsive(xl) {
                 font-size: 20px;
               }
-              @include responsive(md) {
+              @include responsive(lg) {
                 margin-bottom: 16px;
               }
               @include responsive(sm) {
@@ -80,7 +80,7 @@
       }
       .body-content {
         @include flex(row, flex-end, space-between);
-        @include responsive(md) {
+        @include responsive(lg) {
           @include flex(column, flex-start, space-between);
           gap: 16px;
         }
@@ -90,7 +90,7 @@
         }
         .subtext {
           @include flex(row, flex-end, space-between);
-          @include responsive(md) {
+          @include responsive(lg) {
             width: 100%;
           }
           &-text {
@@ -142,7 +142,7 @@
               @include responsive(xl) {
                 max-width: 40px;
               }
-              @include responsive(md) {
+              @include responsive(lg) {
                 max-width: 32px;
               }
             }
@@ -155,7 +155,7 @@
             @include responsive(xl) {
               margin-bottom: -20px;
             }
-            @include responsive(md) {
+            @include responsive(lg) {
               display: none;
             }
           }
@@ -171,7 +171,7 @@
           bottom: 186px;
           left: 235px;
         }
-        @include responsive(md) {
+        @include responsive(lg) {
           display: none;
         }
       }
